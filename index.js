@@ -47,7 +47,7 @@ app.post("/new-question", (req, res) => {
 
 app.get("/question/:id", (req, res) => {
   const id = req.params.id;
-
+  
   Question.findOne({
     where: {
       id: id
@@ -60,6 +60,17 @@ app.get("/question/:id", (req, res) => {
     } else {
       res.redirect("/");
     }
+  });
+});
+
+app.post("/new-response", (req, res) => {
+  const p = req.body;
+
+  Response.create({
+    body: p.body,
+    questionId: p.questionId
+  }).then(() => {
+    res.redirect("/question/" + p.questionId);
   });
 });
 
