@@ -1,5 +1,15 @@
 <%- include("./partials/header"); %>
 <body>
   <%- include("./partials/navbar"); %> 
+
+  <div class="container">
+    <!-- <br>
+    <a href="/" class="btn btn-secondary" role="button">Voltar</a> -->
+    <hr>
+    <h1><%= question.title; %></h1>
+    <hr>
+    <p><%= question.description; %></p>
+  </div>
+
 </body>
 <%- include("./partials/footer"); %>  
