@@ -4,6 +4,7 @@ const connection = require("./database/database");
 
 // Models
 const Question = require("./database/models/Question");
+const Response = require("./database/models/Response");
 //
 
 connection
