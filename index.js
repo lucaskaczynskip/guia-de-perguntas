@@ -44,6 +44,22 @@ app.post("/new-question", (req, res) => {
   });
 });
 
+app.get("/question/:id", (req, res) => {
+  const id = req.params.id;
+
+  Question.findOne({
+    where: {
+      id: id
+    }
+  }).then((question) => {
+    if(question != undefined) {
+      res.render("question");
+    } else {
+      res.redirect("/");
+    }
+  });
+});
+
 const port = 8000;
 
 app.listen(port, () => console.log("Server is running!"));
