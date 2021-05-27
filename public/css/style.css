@@ -1,0 +1,12 @@
+body {
+  background-color: #ECEFF1;
+}
+
+a h2 {
+  text-decoration: none;
+  /* color: white; */
+}
+
+#ask-card {
+  margin-top: 5vh;
+}
