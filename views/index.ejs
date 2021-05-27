@@ -16,9 +16,11 @@
           <h4><%= question.title; %></h4>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary">
-            <a style="text-decoration: none; color: white;" href="/question/<%- question.id; %>">Responder</a>
-          </button>
+          <a href="/question/<%- question.id; %>">
+            <button class="btn btn-primary">
+              Responder
+            </button>
+          </a>
         </div>
       </div>
     <% }); %> 
