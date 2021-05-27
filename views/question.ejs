@@ -3,12 +3,23 @@
   <%- include("./partials/navbar"); %> 
 
   <div class="container">
-    <!-- <br>
-    <a href="/" class="btn btn-secondary" role="button">Voltar</a> -->
+    <br>
+    <a href="/" class="btn btn-secondary" role="button">Voltar</a>
+    
     <hr>
     <h1><%= question.title; %></h1>
     <hr>
     <p><%= question.description; %></p>
+    <hr>
+
+    <form method="POST" action="/new-response">
+      <div class="form-group">
+        <label for="body"><h3>Responda</h3></label>
+        <textarea class="form-control" placeholder="Digite sua resposta" name="body" rows="5"></textarea>
+      </div>
+      <input type="hidden" name="questionId" value="<%= question.id; %>">
+      <button type="submit" class="btn btn-primary">Responder</button>
+    </form>
   </div>
 
 </body>
