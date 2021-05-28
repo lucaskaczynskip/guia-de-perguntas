@@ -10,6 +10,7 @@
     <h1><%= question.title; %></h1>
     <hr>
     <p><%= question.description; %></p>
+    <p style="text-align: right;"><b>Publicada em: </b><%= question.createdAt; %></p>
     <hr>
 
     <form method="POST" action="/new-response">
