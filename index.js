@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const connection = require("./database/database");
 
+// Port
+const port = 3000;
+
 // Models
 const Question = require("./database/models/Question");
 const Response = require("./database/models/Response");
@@ -73,7 +76,5 @@ app.post("/new-response", (req, res) => {
     res.redirect("/question/" + p.questionId);
   });
 });
-
-const port = 8000;
 
 app.listen(port, () => console.log("Server is running!"));
