@@ -21,6 +21,21 @@
       <input type="hidden" name="questionId" value="<%= question.id; %>">
       <button type="submit" class="btn btn-primary">Responder</button>
     </form>
+
+    <hr style="border: 1px solid black;">
+    <p><h3>Respostas</h3></p>
+
+    <% responses.forEach(response => { %>
+      <div class="card" style="margin-left: 1rem;">
+        <div class="card-body">
+          <p><%= response.body; %></p>
+        </div>
+        <div class="card-footer">
+          <p><%= response.createdAt %></p>
+        </div>
+      </div>
+      <br>
+    <% }) %>  
   </div>
 
 </body>
