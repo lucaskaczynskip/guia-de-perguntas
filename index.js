@@ -52,14 +52,20 @@ app.get("/question/:id", (req, res) => {
   const id = req.params.id;
   
   Question.findOne({
-    where: {
-      id: id
-    }
+    where: { id: id }
   }).then((question) => {
     if(question != undefined) {
-      res.render("question", {
-        question: question
-      });
+      Response.findAll({ 
+        where: { 
+          questionId: question.id 
+        },
+        order: [["createdAt", "DESC"]]
+       }).then((responses) => {
+         res.render("question", {
+           question: question,
+           responses: responses
+         });
+       });
     } else {
       res.redirect("/");
     }
